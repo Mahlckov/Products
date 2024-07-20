@@ -8,7 +8,8 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateProductComponent } from './product/update-product/update-product.component';
 import {provideHttpClient, withFetch, withInterceptorsFromDi} from "@angular/common/http";
-import { SearchByCategoryComponent } from './category/search-by-category/search-by-category.component';
+import { SearchByCategoryComponent } from './product/search-by-category/search-by-category.component';
+import { SearchByNameComponent } from './product/search-by-name/search-by-name.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SearchByCategoryComponent } from './category/search-by-category/search-
     ProductsComponent,
     AddProductComponent,
     UpdateProductComponent,
-    SearchByCategoryComponent
+    SearchByCategoryComponent,
+    SearchByNameComponent
   ],
   imports: [
     BrowserModule,

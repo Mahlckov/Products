@@ -66,4 +66,8 @@ export class ProductService {
     return this.http.get<Product[]>(url);
   }
 
+  searchByName(name: string):Observable<Product[]> {
+    const url = `${api_URL}/prodsByName/${name}`;
+    return this.http.get<Product[]>(url);
+  }
 }
