@@ -28,7 +28,7 @@ export class ProductsComponent implements OnInit {
   deleteProduct(product: Product) {
     let conf = confirm("Etes-vous sûr ?");
     if (conf) {
-      this.productService.deleteProduct(product.id!).subscribe(() => {
+      this.productService.deleteProduct(product.idProduct!).subscribe(() => {
         console.log("product supprimé");
         this.loadProducts();
       });

@@ -11,7 +11,7 @@ import {Category} from "../../models/category.model";
 })
 export class UpdateProductComponent implements OnInit {
   currentProduct = new Product();
-  categories! : Category[];
+  categories: Category[] = [];
   updatedCatId? : number;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -20,11 +20,21 @@ export class UpdateProductComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.productService.listCategories().subscribe(categories => {
+      this.categories = categories;
+    });
+
     this.productService.getProduct(this.activatedRoute.snapshot.params['id']).
-    subscribe( prod =>{ this.currentProduct = prod; } ) ;
+    subscribe( prod =>{
+      this.currentProduct = prod;
+      this.updatedCatId =
+        this.currentProduct.category.idCat;
+    } ) ;
   }
 
   updateProduct() {
+    this.currentProduct.category = this.categories.
+    find(cat => cat.idCat == this.updatedCatId)!;
     this.productService.updateProduct(this.currentProduct).subscribe(prod => {
       this.router.navigate(['products']); }
     );

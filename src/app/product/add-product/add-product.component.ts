@@ -20,10 +20,15 @@ export class AddProductComponent implements OnInit{
 
 
   ngOnInit() {
-    this.categories = this.productService.listCategories();
+    this.productService.listCategories().
+    subscribe(cats => {console.log(cats);
+        this.categories = cats;
+      }
+    );
   }
 
   addProduct(){
+    this.newProduct.category = this.categories.find(cat => cat.idCat == this.newIdCat)!;
     this.productService.addProduct(this.newProduct)
       .subscribe(prod => {
         console.log(prod);

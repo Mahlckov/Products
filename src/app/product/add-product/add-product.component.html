@@ -5,17 +5,17 @@
   <form>
     <div class="col-sm-2 col-md-2 col-lg-2">
       <label >ID Produit</label>
-      <input type="text" [(ngModel)]="newProduct.id"
+      <input type="text" [(ngModel)]="newProduct.idProduct"
              name="idProduit" class="form-control">
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4" >
       <label >Nom Produit</label>
-      <input type="text"[(ngModel)]= "newProduct.name"
+      <input type="text"[(ngModel)]= "newProduct.productName"
              name="nomProduit" class="form-control">
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2">
       <label >Prix Produit</label>
-      <input type="number" [(ngModel)]= "newProduct.price"
+      <input type="number" [(ngModel)]= "newProduct.productPrice"
              name="prixProduit" class="form-control">
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4">
@@ -27,8 +27,8 @@
       <label>Categorie</label>
       <select class="form-control form-control-lg" id="idCat" name="idCat"
               [(ngModel)]="newIdCat">
-        <option *ngFor="let cat of categories" [value]="cat.id" >
-          {{cat.name}}
+        <option *ngFor="let cat of categories" [value]="cat.idCat" >
+          {{cat.catName}}
         </option>
       </select>
     </div>

@@ -1,4 +1,13 @@
 <div class="container">
+  <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <label>Categories </label>
+    <select class="form-control form-control-lg" id="idCat" name="idCat"
+            [(ngModel)]="categoryId" (change)="onChange()">
+      <option *ngFor="let cat of categories" value="{{cat.idCat}}">
+        {{cat.catName}}
+      </option>
+    </select>
+  </div>
   <div class="card shadow mb-4">
     <div class="card-body">
       <table class="table table-striped">
@@ -20,8 +29,8 @@
           <td>{{product.creationDate | date:'dd/MM/yyyy'}}</td>
           <td>{{product.category.catName}}</td>
           <td>
-            <a class="btn btn-danger" (click)="deleteProduct(product)">Supprimer</a>
-            <a class="btn btn-success" [routerLink]="['/updateProduct', product.idProduct]">Modifier</a>
+<!--            <a class="btn btn-danger" (click)="deleteProduct(product)">Supprimer</a>-->
+<!--            <a class="btn btn-success" [routerLink]="['/updateProduct', product.idProduct]">Modifier</a>-->
           </td>
         </tr>
         </tbody>
