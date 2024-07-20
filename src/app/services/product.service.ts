@@ -22,17 +22,9 @@ export class ProductService {
     return this.http.get<Product[]>(api_URL);
   }
 
-  listCategories():Observable<Category[]>{
-    return this.http.get<Category[]>(`${api_URL}/cat`);
-  }
-
   getProduct(id: number): Observable<Product> {
     return this.http.get<Product>(`${api_URL}/${id}`);
   }
-
-  // getCategory(id: number): Category {
-  //   return this.categories.find(cat => cat.id == id)!;
-  // }
 
   addProduct(prod: Product):Observable<Product>{
     return this.http.post<Product>(api_URL, prod, httpOptions);

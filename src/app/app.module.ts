@@ -10,6 +10,8 @@ import { UpdateProductComponent } from './product/update-product/update-product.
 import {provideHttpClient, withFetch, withInterceptorsFromDi} from "@angular/common/http";
 import { SearchByCategoryComponent } from './product/search-by-category/search-by-category.component';
 import { SearchByNameComponent } from './product/search-by-name/search-by-name.component';
+import { UpdateCategoryComponent } from './category/update-category/update-category.component';
+import {ListCategoriesComponent} from "./category/list-categories/list-categories.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SearchByNameComponent } from './product/search-by-name/search-by-name.c
     AddProductComponent,
     UpdateProductComponent,
     SearchByCategoryComponent,
-    SearchByNameComponent
+    SearchByNameComponent,
+    ListCategoriesComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -20,8 +20,10 @@
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4">
       <label >Date création</label>
-      <input type="date" [ngModel]="currentProduct.creationDate | date: 'yyyy-MM-dd'"
-             (ngModelChange)=" currentProduct.creationDate= $event" name="creationDate"
+      <input type="date"
+             [(ngModel)]="currentProduct.creationDate"
+             (ngModelChange)="onDateChange($event)"
+             name="creationDate"
              class="form-control">
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4">

@@ -1,0 +1,14 @@
+<form (ngSubmit)="saveCategory()">
+  <div>
+    <label>ID Catégorie</label>
+    <input type="text" [(ngModel)]="category.idCat" name="idcategory" class="form-control w-25" readonly>
+  </div>
+  <div>
+    <label>Nom Catégorie</label>
+    <input type="text" [(ngModel)]="category.catName" name="nomcategory" class="form-control"
+           placeholder="Entrez un nom de catégorie...">
+  </div>
+  <div class="mt-2">
+    <button type="submit" [disabled]="!category.catName" class="btn btn-success">Ajouter</button>
+  </div>
+</form>
