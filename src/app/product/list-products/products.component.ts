@@ -19,7 +19,6 @@ export class ProductsComponent implements OnInit {
 
   loadProducts() {
     this.productService.listProducts().subscribe(prods => {
-      console.log(prods);
       this.products = prods;
     });
   }
@@ -29,7 +28,6 @@ export class ProductsComponent implements OnInit {
     let conf = confirm("Etes-vous sûr ?");
     if (conf) {
       this.productService.deleteProduct(product.idProduct!).subscribe(() => {
-        console.log("product supprimé");
         this.loadProducts();
       });
     }

@@ -21,7 +21,7 @@
           <td>{{product.category.catName}}</td>
           <td>
             <a class="btn btn-danger" (click)="deleteProduct(product)">Supprimer</a>
-            <a class="btn btn-success" [routerLink]="['/updateProduct', product.idProduct]">Modifier</a>
+            <a class="btn btn-success" [routerLink]="['/update-product', product.idProduct]">Modifier</a>
           </td>
         </tr>
         </tbody>

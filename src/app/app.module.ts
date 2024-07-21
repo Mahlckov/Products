@@ -1,38 +1,26 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule, provideClientHydration} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ProductsComponent } from './product/list-products/products.component';
-import { AddProductComponent } from './product/add-product/add-product.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { UpdateProductComponent } from './product/update-product/update-product.component';
 import {provideHttpClient, withFetch, withInterceptorsFromDi} from "@angular/common/http";
-import { SearchByCategoryComponent } from './product/search-by-category/search-by-category.component';
-import { SearchByNameComponent } from './product/search-by-name/search-by-name.component';
-import { UpdateCategoryComponent } from './category/update-category/update-category.component';
-import {ListCategoriesComponent} from "./category/list-categories/list-categories.component";
-import { LoginComponent } from './login/login/login.component';
 import {ProductModule} from "./product/product.module";
+import {CategoryModule} from "./category/category.module";
+import {LoginModule} from "./login/login.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
-    AddProductComponent,
-    UpdateProductComponent,
-    SearchByCategoryComponent,
-    SearchByNameComponent,
-    ListCategoriesComponent,
-    UpdateCategoryComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ProductModule
+    ProductModule,
+    CategoryModule,
+    LoginModule
   ],
   providers: [
     provideClientHydration(),
@@ -41,4 +29,5 @@ import {ProductModule} from "./product/product.module";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
