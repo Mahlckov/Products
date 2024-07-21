@@ -1,14 +1,19 @@
 <form (ngSubmit)="saveCategory()">
-  <div>
+  <div [hidden]="isAdded">
     <label>ID Catégorie</label>
     <input type="text" [(ngModel)]="category.idCat" name="idcategory" class="form-control w-25" readonly>
   </div>
   <div>
     <label>Nom Catégorie</label>
-    <input type="text" [(ngModel)]="category.catName" name="nomcategory" class="form-control"
+    <input type="text" [(ngModel)]="category.catName" name="category_name" class="form-control"
            placeholder="Entrez un nom de catégorie...">
   </div>
+  <div>
+    <label>Description Catégorie</label>
+    <input type="text" [(ngModel)]="category.catDescription" name="category_description" class="form-control"
+           placeholder="Entrez une description...">
+  </div>
   <div class="mt-2">
-    <button type="submit" [disabled]="!category.catName" class="btn btn-success">Ajouter</button>
+    <button type="submit" [disabled]="!category.catName" class="btn btn-success">{{isAdded ? 'Ajouter' : 'Modifier'}}</button>
   </div>
 </form>

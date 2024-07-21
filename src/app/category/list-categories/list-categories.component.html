@@ -4,7 +4,8 @@
       <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
         <app-update-category
           [category]="updatedCategory"
-          (categoryUpdated)="onCategoryUpdated($event)">
+          (categoryUpdated)="onCategoryUpdated($event)"
+          [isAdded]="isAdded">
         </app-update-category>
       </div>
       <table class="table table-striped">
@@ -12,6 +13,7 @@
         <tr>
           <th>Id</th>
           <th>Nom Catégorie</th>
+          <th>Description Catégorie</th>
           <th>Actions</th>
         </tr>
         </thead>
@@ -19,6 +21,7 @@
         <tr *ngFor="let cat of categories">
           <td>{{cat.idCat}}</td>
           <td>{{cat.catName}}</td>
+          <td>{{cat.catDescription}}</td>
           <td><a class="btn btn-success" (click)="updateCat(cat)">Editer</a></td>
         </tr>
         </tbody>

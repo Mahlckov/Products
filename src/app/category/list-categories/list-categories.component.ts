@@ -11,6 +11,7 @@ import {CategoryService} from "../../services/category.service";
 export class ListCategoriesComponent implements OnInit {
   categories: Category[] = [];
   updatedCategory: Category = {idCat: 0, catName: ''};
+  isAdded: boolean = true;
 
   constructor(private categoryService: CategoryService) {
   }
@@ -21,6 +22,7 @@ export class ListCategoriesComponent implements OnInit {
 
   updateCat(cat: Category) {
     this.updatedCategory = cat;
+    this.isAdded=false;
   }
 
 

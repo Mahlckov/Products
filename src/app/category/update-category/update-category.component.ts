@@ -10,6 +10,9 @@ export class UpdateCategoryComponent implements OnInit{
   @Input()
   category! : Category;
 
+  @Input()
+  isAdded!:boolean;
+
   @Output() //renvoyer à la liste des categories une catégorie créée ou maj
   categoryUpdated = new EventEmitter<Category>();
 
