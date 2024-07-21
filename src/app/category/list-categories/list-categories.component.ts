@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductService} from "../../services/product.service";
 import {Category} from "../../models/category.model";
 import {CategoryService} from "../../services/category.service";
 
@@ -11,16 +10,17 @@ import {CategoryService} from "../../services/category.service";
 
 export class ListCategoriesComponent implements OnInit {
   categories: Category[] = [];
-  updatedCategory: Category = { idCat: 0, catName: '' };
+  updatedCategory: Category = {idCat: 0, catName: ''};
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService) {
+  }
 
   ngOnInit(): void {
     this.loadCategories();
   }
 
-  updateCat(cat:Category) {
-    this.updatedCategory=cat;
+  updateCat(cat: Category) {
+    this.updatedCategory = cat;
   }
 
 

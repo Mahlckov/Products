@@ -12,13 +12,14 @@
         <tr>
           <th>Id</th>
           <th>Nom Catégorie</th>
-          <td><a class="btn btn-success" (click)="updateCat(cat)">Editer</a></td>
+          <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let cat of categories">
           <td>{{cat.idCat}}</td>
           <td>{{cat.catName}}</td>
+          <td><a class="btn btn-success" (click)="updateCat(cat)">Editer</a></td>
         </tr>
         </tbody>
       </table>

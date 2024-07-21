@@ -3,6 +3,7 @@ import {Product} from "../../models/product.model";
 import {ProductService} from "../../services/product.service";
 import {Router} from "@angular/router";
 import {Category} from "../../models/category.model";
+import {CategoryService} from "../../services/category.service";
 
 @Component({
   selector: 'app-add-product',
@@ -16,11 +17,12 @@ export class AddProductComponent implements OnInit{
   newCategory! : Category;
 
   constructor(private productService: ProductService,
+              private categoryService: CategoryService,
               private router :Router) { }
 
 
   ngOnInit() {
-    this.productService.listCategories().
+    this.categoryService.listCategories().
     subscribe(cats => {console.log(cats);
         this.categories = cats;
       }

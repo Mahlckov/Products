@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Category} from "../../models/category.model";
 import {Product} from "../../models/product.model";
 import {ProductService} from "../../services/product.service";
+import {CategoryService} from "../../services/category.service";
 
 @Component({
   selector: 'app-search-by-category',
@@ -13,11 +14,13 @@ export class SearchByCategoryComponent implements OnInit{
   categoryId! : number;
   categories : Category[]=[];
 
-  constructor(private productService: ProductService) {
+  constructor(
+    private categoryService: CategoryService,
+    private productService: ProductService) {
   }
 
   ngOnInit(): void {
-    this.productService.listCategories().
+    this.categoryService.listCategories().
     subscribe(cats => {
       this.categories = cats;
     });
