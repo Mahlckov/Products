@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Category} from "../../models/category.model";
-import {Product} from "../../models/product.model";
-import {ProductService} from "../../services/product.service";
-import {CategoryService} from "../../services/category.service";
+import {Category} from "../../core/models/category.model";
+import {Product} from "../../core/models/product.model";
+import {ProductService} from "../../core/services/product.service";
+import {CategoryService} from "../../core/services/category.service";
 
 @Component({
   selector: 'app-search-by-category',

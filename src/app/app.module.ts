@@ -12,6 +12,8 @@ import { SearchByCategoryComponent } from './product/search-by-category/search-b
 import { SearchByNameComponent } from './product/search-by-name/search-by-name.component';
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 import {ListCategoriesComponent} from "./category/list-categories/list-categories.component";
+import { LoginComponent } from './login/login/login.component';
+import {ProductModule} from "./product/product.module";
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import {ListCategoriesComponent} from "./category/list-categories/list-categorie
     SearchByCategoryComponent,
     SearchByNameComponent,
     ListCategoriesComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ProductModule
   ],
   providers: [
     provideClientHydration(),

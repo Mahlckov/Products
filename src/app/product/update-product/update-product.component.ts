@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Product} from "../../models/product.model";
+import {Product} from "../../core/models/product.model";
 import { Router, ActivatedRoute } from '@angular/router';
-import {ProductService} from "../../services/product.service";
-import {Category} from "../../models/category.model";
-import {CategoryService} from "../../services/category.service";
+import {ProductService} from "../../core/services/product.service";
+import {Category} from "../../core/models/category.model";
+import {CategoryService} from "../../core/services/category.service";
 
 @Component({
   selector: 'app-update-product',
